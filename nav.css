@@ -1,0 +1,80 @@
+*{
+
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+
+
+.navbar{
+    background-color: rgb(27, 27, 92);
+    display: flex;
+    /* border: 2px solid red; */
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+
+
+.navlist{
+    display: flex;
+}
+
+.item{
+    margin: 10px 20px;
+    /* border: 2px solid yellow; */
+    list-style-type: none;
+
+}
+
+.item  a{
+    text-decoration: none;
+    color : white;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.item a:hover{
+    background-color: orange;
+    border-radius: 10px;
+    color:rgb(27, 27, 92);
+}
+
+
+
+
+#search {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+
+#search > label {
+    color: greenyellow;
+    margin: 0px 10px;
+    
+}
+
+
+
+
+/* styling burger  */
+
+.line{
+    height: 4px;
+    width: 22px;
+    background-color: yellow;
+    margin: 3px;
+}
+
+
+.burger{
+    cursor: pointer;
+    display: none;
+}

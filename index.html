@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="shop.css">
+</head>
+
+<body>
+
+
+
+    <!-- Navigation section  -->
+
+    <nav class="navbar">
+
+        <ul class="navlist">
+
+            <li class="item"><a onclick="show_shop()"> Shop </a></li>
+            <li class="item"><a onclick="show_cart()"> Cart </a></li>
+            <li class="item"><a href="admin.html"> Admin </a></li>
+
+        </ul>
+
+        <div id="search">
+            <label for="search">Search</label>
+            <input type="text" id="search">
+        </div>
+
+
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+    </nav>
+<!-- cards -->
+
+    <div class="over_modal" id="shop_main">
+
+        <section id="shop_cards">
+        </section>
+
+        <div class="blur ">
+        </div>
+
+    </div>
+
+
+
+    <section id="shop_cart">
+    </section>
+
+
+    <script src="shop.js"></script>
+
+</body>
+
+</html>

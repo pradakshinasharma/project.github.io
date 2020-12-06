@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <ul class="navlist">
+
+            <li class="item"><a href="shop.html"> Shop </a></li>
+            <li class="item"><a href="admin.html"> Admin </a></li>
+
+        </ul>
+
+        <div id="search">
+            <label for="search">Search</label>
+            <input type="text" id="search">
+        </div>
+
+
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+    </nav>
+
+
+
+    <div class="form-group">
+        <label class="label" for="title">Title</label>
+        <input type="text" id="title">
+    </div>
+
+    <div class="form-group">
+        <label class="label" for="image">Image</label>
+        <input type="text" id="image">
+    </div>
+    <div class="form-group">
+        <label class="label" for="price">Price</label>
+        <input type="number" id="price">
+    </div>
+    <div class="form-group">
+        <label class="label" for="rating">Rating</label>
+        <input type="number" id="rating">
+    </div>
+
+    <div class="form-group">
+        <a class="btn-submit" onclick="add_product()" href="shop.html">Submit</a>
+    </div>
+
+
+
+    <script>
+
+        function add_product() {
+
+            if( title.value.length > 0 && price.value > 0 &&  image.value  && rating.value ){
+
+                if (localStorage.getItem('itemsJson') == null) {
+
+                    if  ( Number(  rating.value ) > 5) {
+                        return alert('Rating Must be Less than or Equal to 5 ')
+                    }
+
+                    var product = [
+                    {
+                        id: 1,
+                        title: title.value,
+                        price: Number(price.value ) ,
+                        image: image.value,
+                        rating: Number(  rating.value )
+                    }
+                ]
+
+                var str_product = JSON.stringify(product)
+                localStorage.setItem('itemsJson', str_product)
+            }
+
+            else {
+                var local_storage = JSON.parse(localStorage.getItem('itemsJson'))
+                local_storage.push(
+                    
+                    {
+                        id :  local_storage[ local_storage.length - 1 ].id + 1 ,
+                        title: title.value,
+                        price: Number(price.value ),
+                        image: image.value,
+                        rating: Number(rating.value)
+                    }
+
+                    )
+                    var str_local_storage = JSON.stringify(local_storage)
+                    localStorage.setItem('itemsJson', str_local_storage)
+                    
+                }
+            }
+            else {
+                alert('Please Fill Correct Values !!!!!!!! ')
+            }
+                
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
